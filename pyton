@@ -1,0 +1,28 @@
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, item):
+        self.stack.append(item)
+
+    def pop(self):
+        return self.stack.pop() if self.stack else None
+
+    def is_empty(self):
+        return not self.stack
+
+def reverse_string(s):
+    stack = Stack()
+    
+    [stack.push(char) for char in s]
+
+    
+    return ''.join(stack.pop() for _ in range(len(stack.stack)))
+
+
+if __name__ == "__main__":
+    strings = ["Sempre Flamengo", "8431", "Python is awesome", "Testing 123..."]
+    for string in strings:
+        print("Original:", string)
+        print("Reversa:", reverse_string(string))
+        print()
